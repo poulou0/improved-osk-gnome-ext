@@ -9,11 +9,14 @@
 .alt-key-latched #keyboard .keyboard-key.default-key.alt-key,
 #keyboard .keyboard-key.default-key.shift-key-uppercase {
       background-color: #55a54c;
+      color: #fff;
 }
 
 #keyboard .keyboard-key.default-key.enter-key {
       border-color: #55a54c;
       background-color: #55a54c;
+      border-radius: 0;
+      color: #fff;
 }
 #keyboard .keyboard-key.default-key.enter-key:active {
       border-color: #43823c;
@@ -28,5 +31,43 @@
 }
 #keyboard .keyboard-key.default-key:active {
       border-color: #121212;
-      background-color: #121212;
+}
+
+#keyboard .keyboard-key {
+      border-radius: 0;
+}
+
+#keyboard .keyboard-key.rounded-key {
+      border-radius: 20px;
+      color: #43823c;
+}
+
+#keyboard .keyboard-key.hide-key {
+      text-align: center;
+}
+
+#keyboard .keyboard-key.spacer {
+      background-color: transparent;
+      border: 0;
+}
+
+#keyboard .keyboard-key.highlighted {
+      background-color: #43823c;
+      color: #fff;
+}
+
+#keyboard .keyboard-key.margin-left {
+      margin-left: 5px;
+}
+
+#keyboard .keyboard-key.small-text {
+      font-size: 10pt;
+}
+
+#keyboard .keyboard-key.medium-text {
+      font-size: 14pt;
+}
+
+#keyboard .keyboard-key.big-text {
+      font-size: 18pt;
 }
