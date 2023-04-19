@@ -232,7 +232,7 @@ function override_getDefaultKeysForRow(row, numRows, level) {
       [{ label: "=/<F", width: 2, level: 3, extraClassName: "medium-text" }],
       [
         { label: "Ctrl", width: 1, keyval: Clutter.KEY_Control_L, extraClassName: "control-key medium-text" },
-        { label: "ABC", width: 1, level: 0, extraClassName: "rounded-key highlighted medium-text" },
+        { label: "?123", width: 1, level: 0, extraClassName: "rounded-key highlighted medium-text" },
         { label: "Alt", width: 1, keyval: Clutter.KEY_Alt_L, extraClassName: "alt-key medium-text" },
       ],
     ],
@@ -242,7 +242,7 @@ function override_getDefaultKeysForRow(row, numRows, level) {
       [{ label: "=/<F", width: 2, level: 2, extraClassName: "highlighted medium-text" }],
       [
         { label: "Ctrl", width: 1, keyval: Clutter.KEY_Control_L, extraClassName: "control-key medium-text" },
-        { label: "ABC", width: 1, level: 0, extraClassName: "rounded-key highlighted medium-text" },
+        { label: "?123", width: 1, level: 0, extraClassName: "rounded-key highlighted medium-text" },
         { label: "Alt", width: 1, keyval: Clutter.KEY_Alt_L, extraClassName: "alt-key medium-text" },
       ],
     ],
@@ -253,7 +253,7 @@ function override_getDefaultKeysForRow(row, numRows, level) {
       [
         { label: "⌫", width: 1, keyval: Clutter.KEY_BackSpace, extraClassName: "medium-text" },
         { label: "Delete", width: 1, keyval: Clutter.KEY_Delete, extraClassName: "small-text" },
-        { label: "🖮\n▿", width: 1, action: "hide", extraClassName: "hide-key" },
+        { label: "⌨\nꜜ", width: 1, action: "hide", extraClassName: "hide-key medium-text" },
       ],
       [
         { label: "⏎", width: 1.5, keyval: Clutter.KEY_Return, extraClassName: "enter-key big-text" },
@@ -262,14 +262,14 @@ function override_getDefaultKeysForRow(row, numRows, level) {
       ],
       [
         { label: "⇧ Shift", width: 2, level: 1, right: true, extraClassName: "shift-key-lowercase medium-text" },
-        { label: "🠉", width: 1, keyval: Clutter.KEY_Up, extraClassName: "small-text" },
+        { label: "↑", width: 1, keyval: Clutter.KEY_Up },
         { label: "End", width: 1, keyval: Clutter.KEY_End, extraClassName: "small-text" },
         { label: "PgDown", width: 1, keyval: Clutter.KEY_Page_Down, extraClassName: "small-text" },
       ],
       [
-        { label: "🠈", width: 1, keyval: Clutter.KEY_Left, extraClassName: "small-text" },
-        { label: "🠋", width: 1, keyval: Clutter.KEY_Down, extraClassName: "small-text" },
-        { label: "🠊", width: 1, keyval: Clutter.KEY_Right, extraClassName: "small-text" },
+        { label: "←", width: 1, keyval: Clutter.KEY_Left },
+        { label: "↓", width: 1, keyval: Clutter.KEY_Down },
+        { label: "→", width: 1, keyval: Clutter.KEY_Right },
         { label: "🌐", width: 1, action: "languageMenu", extraClassName: "layout-key medium-text" },
       ],
     ],
@@ -277,7 +277,7 @@ function override_getDefaultKeysForRow(row, numRows, level) {
       [
         { label: "⌫", width: 1, keyval: Clutter.KEY_BackSpace, extraClassName: "medium-text" },
         { label: "Insert", width: 1, keyval: Clutter.KEY_Insert, extraClassName: "small-text" },
-        { label: "🖮\n▿", width: 1, action: "hide", extraClassName: "hide-key" },
+        { label: "⌨\nꜜ", width: 1, action: "hide", extraClassName: "hide-key medium-text" },
       ],
       [
         { label: "⏎", width: 1.5, keyval: Clutter.KEY_Return, extraClassName: "enter-key big-text" },
@@ -286,14 +286,14 @@ function override_getDefaultKeysForRow(row, numRows, level) {
       ],
       [
         { label: "⇧ Shift", width: 2, level: 0, right: true, extraClassName: "shift-key-uppercase medium-text" },
-        { label: "🠉", width: 1, keyval: Clutter.KEY_Up, extraClassName: "small-text" },
+        { label: "↑", width: 1, keyval: Clutter.KEY_Up },
         { label: "End", width: 1, keyval: Clutter.KEY_End, extraClassName: "small-text" },
         { label: "PgDown", width: 1, keyval: Clutter.KEY_Page_Down, extraClassName: "small-text" },
       ],
       [
-        { label: "🠈", width: 1, keyval: Clutter.KEY_Left, extraClassName: "small-text" },
-        { label: "🠋", width: 1, keyval: Clutter.KEY_Down, extraClassName: "small-text" },
-        { label: "🠊", width: 1, keyval: Clutter.KEY_Right, extraClassName: "small-text" },
+        { label: "←", width: 1, keyval: Clutter.KEY_Left },
+        { label: "↓", width: 1, keyval: Clutter.KEY_Down },
+        { label: "→", width: 1, keyval: Clutter.KEY_Right },
         { label: "🌐", width: 1, action: "languageMenu", extraClassName: "layout-key medium-text" },
       ],
     ],
@@ -301,7 +301,7 @@ function override_getDefaultKeysForRow(row, numRows, level) {
       [
         { label: "⌫", width: 1, keyval: Clutter.KEY_BackSpace, extraClassName: "medium-text" },
         { label: "Delete", width: 1, keyval: Clutter.KEY_Delete, extraClassName: "small-text" },
-        { label: "🖮\n▿", width: 1, action: "hide", extraClassName: "hide-key" },
+        { label: "⌨\nꜜ", width: 1, action: "hide", extraClassName: "hide-key medium-text" },
       ],
       [
         { label: "⏎", width: 1.5, keyval: Clutter.KEY_Return, extraClassName: "enter-key big-text" },
@@ -310,14 +310,14 @@ function override_getDefaultKeysForRow(row, numRows, level) {
       ],
       [
         { label: "=/<F", width: 2, level: 3, right: true, extraClassName: "medium-text" },
-        { label: "🠉", width: 1, keyval: Clutter.KEY_Up, extraClassName: "small-text" },
+        { label: "↑", width: 1, keyval: Clutter.KEY_Up },
         { label: "End", width: 1, keyval: Clutter.KEY_End, extraClassName: "small-text" },
         { label: "PgDown", width: 1, keyval: Clutter.KEY_Page_Down, extraClassName: "small-text" },
       ],
       [
-        { label: "🠈", width: 1, keyval: Clutter.KEY_Left, extraClassName: "small-text" },
-        { label: "🠋", width: 1, keyval: Clutter.KEY_Down, extraClassName: "small-text" },
-        { label: "🠊", width: 1, keyval: Clutter.KEY_Right, extraClassName: "small-text" },
+        { label: "←", width: 1, keyval: Clutter.KEY_Left },
+        { label: "↓", width: 1, keyval: Clutter.KEY_Down },
+        { label: "→", width: 1, keyval: Clutter.KEY_Right },
         { label: "🌐", width: 1, action: "languageMenu", extraClassName: "layout-key medium-text" },
       ],
     ],
@@ -340,7 +340,7 @@ function override_getDefaultKeysForRow(row, numRows, level) {
         { label: "F9", width: 1, keyval: Clutter.KEY_F9, extraClassName: "small-text" },
       ],
       [
-        { label: "🖮\n▿", width: 1, action: "hide", extraClassName: "hide-key" },
+        { label: "⌨\nꜜ", width: 1, action: "hide", extraClassName: "hide-key medium-text" },
         { label: "F10", width: 1, keyval: Clutter.KEY_F10, extraClassName: "small-text" },
         { label: "F11", width: 1, keyval: Clutter.KEY_F11, extraClassName: "small-text" },
         { label: "F12", width: 1, keyval: Clutter.KEY_F12, extraClassName: "small-text" },

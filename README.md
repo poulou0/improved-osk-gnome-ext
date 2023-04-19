@@ -13,6 +13,20 @@ This extension is a fork of [SebastianLuebke/improved-osk-gnome-ext](https://git
 
 ![Screenshot](screenshots/1.png)
 
+<details>
+  <summary>All levels</summary>
+
+Lowercase:
+![Screenshot](screenshots/gnome_42-level_0.png)
+Uppercase:
+![Screenshot](screenshots/gnome_42-level_1.png)
+Characters:
+![Screenshot](screenshots/gnome_42-level_2.png)
+Special characters:
+![Screenshot](screenshots/gnome_42-level_3.png)
+</details>
+
+
 ## Installation
 
 ### From source code
