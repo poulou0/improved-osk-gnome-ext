@@ -207,146 +207,192 @@ function override_keyvalRelease(keyval) {
 function override_getDefaultKeysForRow(row, numRows, level) {
   let defaultKeysPreMod = [
     [
-      [{ label: "Esc", width: 1, keyval: Clutter.KEY_Escape, extraClassName: "medium-text" }],
-      [{ label: "Tab ↹", width: 1.5, keyval: Clutter.KEY_Tab, extraClassName: "medium-text" }],
-      [{label: "⇧ Shift", width: 2, level: 1, extraClassName: "shift-key-lowercase medium-text" }],
+      [{ label: "Esc", width: 1, keyval: Clutter.KEY_Escape }],
+      [{ label: "Tab ↹", width: 1.5, keyval: Clutter.KEY_Tab }],
+      [{label: "⇧ Shift", width: 2, level: 1, extraClassName: "shift-key-lowercase" }],
       [
-        { label: "Ctrl", width: 1, keyval: Clutter.KEY_Control_L, extraClassName: "control-key medium-text" },
-        { label: "?123", width: 1, level: 2, extraClassName: "rounded-key medium-text" },
-        { label: "Alt", width: 1, keyval: Clutter.KEY_Alt_L, extraClassName: "alt-key medium-text" },
+        { label: "Ctrl", width: 1, keyval: Clutter.KEY_Control_L, extraClassName: "control-key" },
+        { label: "?123", width: 1, level: 2 },
+        { label: "Alt", width: 1, keyval: Clutter.KEY_Alt_L, extraClassName: "alt-key" },
       ],
     ],
     [
-      [{ label: "Esc", width: 1, keyval: Clutter.KEY_Escape, extraClassName: "medium-text" }],
-      [{ label: "Tab ↹", width: 1.5, keyval: Clutter.KEY_Tab, extraClassName: "medium-text" }],
-      [{label: "⇧ Shift", width: 2, level: 0, extraClassName: "shift-key-uppercase medium-text" }],
+      [{ label: "Esc", width: 1, keyval: Clutter.KEY_Escape }],
+      [{ label: "Tab ↹", width: 1.5, keyval: Clutter.KEY_Tab }],
+      [{label: "⇧ Shift", width: 2, level: 0, extraClassName: "shift-key-uppercase" }],
       [
-        { label: "Ctrl", width: 1, keyval: Clutter.KEY_Control_L, extraClassName: "control-key medium-text" },
-        { label: "❖", width: 1, keyval: Clutter.KEY_Super_L, extraClassName: "super-key" },
-        { label: "Alt", width: 1, keyval: Clutter.KEY_Alt_L, extraClassName: "alt-key medium-text" },
+        { label: "Ctrl", width: 1, keyval: Clutter.KEY_Control_L, extraClassName: "control-key" },
+        { label: "?123", width: 1, level: 2 },
+        { label: "Alt", width: 1, keyval: Clutter.KEY_Alt_L, extraClassName: "alt-key" },
       ],
     ],
     [
-      [{ label: "Esc", width: 1, keyval: Clutter.KEY_Escape, extraClassName: "medium-text" }],
-      [{ label: "Tab ↹", width: 1.5, keyval: Clutter.KEY_Tab, extraClassName: "medium-text" }],
-      [{ label: "=/<F", width: 2, level: 3, extraClassName: "medium-text" }],
+      [{ label: "Esc", width: 1, keyval: Clutter.KEY_Escape }],
+      [{ label: "Tab ↹", width: 1.5, keyval: Clutter.KEY_Tab }],
+      [{ label: "=/<F", width: 2, level: 3 }],
       [
-        { label: "Ctrl", width: 1, keyval: Clutter.KEY_Control_L, extraClassName: "control-key medium-text" },
-        { label: "?123", width: 1, level: 0, extraClassName: "rounded-key highlighted medium-text" },
-        { label: "Alt", width: 1, keyval: Clutter.KEY_Alt_L, extraClassName: "alt-key medium-text" },
+        { label: "Ctrl", width: 1, keyval: Clutter.KEY_Control_L, extraClassName: "control-key" },
+        { label: "ABC", width: 1, level: 0, extraClassName: "rounded-key highlighted" },
+        { label: "Alt", width: 1, keyval: Clutter.KEY_Alt_L, extraClassName: "alt-key" },
       ],
     ],
     [
-      [{ label: "Esc", width: 1, keyval: Clutter.KEY_Escape, extraClassName: "medium-text" }],
-      [{ label: "Tab ↹", width: 1.5, keyval: Clutter.KEY_Tab, extraClassName: "medium-text" }],
-      [{ label: "=/<F", width: 2, level: 2, extraClassName: "highlighted medium-text" }],
+      [{ label: "Esc", width: 1, keyval: Clutter.KEY_Escape }],
+      [{ label: "Tab ↹", width: 1.5, keyval: Clutter.KEY_Tab }],
+      [{ label: "=/<F", width: 2, level: 2, extraClassName: "highlighted" }],
       [
-        { label: "Ctrl", width: 1, keyval: Clutter.KEY_Control_L, extraClassName: "control-key medium-text" },
-        { label: "?123", width: 1, level: 0, extraClassName: "rounded-key highlighted medium-text" },
-        { label: "Alt", width: 1, keyval: Clutter.KEY_Alt_L, extraClassName: "alt-key medium-text" },
+        { label: "Ctrl", width: 1, keyval: Clutter.KEY_Control_L, extraClassName: "control-key" },
+        { label: "ABC", width: 1, level: 0, extraClassName: "rounded-key highlighted" },
+        { label: "Alt", width: 1, keyval: Clutter.KEY_Alt_L, extraClassName: "alt-key" },
       ],
     ],
   ];
 
+  const inputSourceManager = InputSourceManager.getInputSourceManager();
+  const currSourceName = inputSourceManager._currentSource._shortName;
+
   let defaultKeysPostMod = [
     [
       [
-        { label: "⌫", width: 1, keyval: Clutter.KEY_BackSpace, extraClassName: "medium-text" },
-        { label: "Delete", width: 1, keyval: Clutter.KEY_Delete, extraClassName: "small-text" },
-        { label: "⌨\nꜜ", width: 1, action: "hide", extraClassName: "hide-key medium-text" },
+        { label: "⌫", width: 1, keyval: Clutter.KEY_BackSpace },
+        { label: "⌨\nꜜ", width: 1, action: "hide", extraClassName: "hide-key" },
       ],
       [
-        { label: "⏎", width: 1.5, keyval: Clutter.KEY_Return, extraClassName: "enter-key big-text" },
-        { label: "Home", width: 1, keyval: Clutter.KEY_Home, extraClassName: "small-text" },
-        { label: "PgUp", width: 1, keyval: Clutter.KEY_Page_Up, extraClassName: "small-text" },
+        { label: "⏎", width: 1.5, keyval: Clutter.KEY_Return, extraClassName: "enter-key" },
       ],
       [
-        { label: "⇧ Shift", width: 2, level: 1, right: true, extraClassName: "shift-key-lowercase medium-text" },
         { label: "↑", width: 1, keyval: Clutter.KEY_Up },
-        { label: "End", width: 1, keyval: Clutter.KEY_End, extraClassName: "small-text" },
-        { label: "PgDown", width: 1, keyval: Clutter.KEY_Page_Down, extraClassName: "small-text" },
+        { label: "🌐\n" + currSourceName, width: 1, action: "languageMenu", extraClassName: "layout-key" },
       ],
       [
+        { label: "❖", width: 1, keyval: Clutter.KEY_Super_L, extraClassName: "super-key" },
         { label: "←", width: 1, keyval: Clutter.KEY_Left },
         { label: "↓", width: 1, keyval: Clutter.KEY_Down },
         { label: "→", width: 1, keyval: Clutter.KEY_Right },
-        { label: "🌐", width: 1, action: "languageMenu", extraClassName: "layout-key medium-text" },
       ],
     ],
     [
       [
-        { label: "⌫", width: 1, keyval: Clutter.KEY_BackSpace, extraClassName: "medium-text" },
-        { label: "Insert", width: 1, keyval: Clutter.KEY_Insert, extraClassName: "small-text" },
-        { label: "⌨\nꜜ", width: 1, action: "hide", extraClassName: "hide-key medium-text" },
+        { label: "⌫", width: 1, keyval: Clutter.KEY_BackSpace },
+        { label: "⌨\nꜜ", width: 1, action: "hide", extraClassName: "hide-key" },
       ],
       [
-        { label: "⏎", width: 1.5, keyval: Clutter.KEY_Return, extraClassName: "enter-key big-text" },
-        { label: "Home", width: 1, keyval: Clutter.KEY_Home, extraClassName: "small-text" },
-        { label: "PgUp", width: 1, keyval: Clutter.KEY_Page_Up, extraClassName: "small-text" },
+        { label: "⏎", width: 1.5, keyval: Clutter.KEY_Return, extraClassName: "enter-key" },
       ],
       [
-        { label: "⇧ Shift", width: 2, level: 0, right: true, extraClassName: "shift-key-uppercase medium-text" },
         { label: "↑", width: 1, keyval: Clutter.KEY_Up },
-        { label: "End", width: 1, keyval: Clutter.KEY_End, extraClassName: "small-text" },
-        { label: "PgDown", width: 1, keyval: Clutter.KEY_Page_Down, extraClassName: "small-text" },
+        { label: "🌐\n" + currSourceName, width: 1, action: "languageMenu", extraClassName: "layout-key" },
       ],
       [
+        { label: "❖", width: 1, keyval: Clutter.KEY_Super_L, extraClassName: "super-key" },
         { label: "←", width: 1, keyval: Clutter.KEY_Left },
         { label: "↓", width: 1, keyval: Clutter.KEY_Down },
         { label: "→", width: 1, keyval: Clutter.KEY_Right },
-        { label: "🌐", width: 1, action: "languageMenu", extraClassName: "layout-key medium-text" },
       ],
     ],
     [
       [
-        { label: "⌫", width: 1, keyval: Clutter.KEY_BackSpace, extraClassName: "medium-text" },
-        { label: "Delete", width: 1, keyval: Clutter.KEY_Delete, extraClassName: "small-text" },
-        { label: "⌨\nꜜ", width: 1, action: "hide", extraClassName: "hide-key medium-text" },
+        { label: "⌫", width: 1, keyval: Clutter.KEY_BackSpace },
+        { label: "PrtSc", width: 1, keyval: Clutter.KEY_Print },
+        { label: "⌨\nꜜ", width: 1, action: "hide", extraClassName: "hide-key" },
       ],
       [
-        { label: "⏎", width: 1.5, keyval: Clutter.KEY_Return, extraClassName: "enter-key big-text" },
-        { label: "Home", width: 1, keyval: Clutter.KEY_Home, extraClassName: "small-text" },
-        { label: "PgUp", width: 1, keyval: Clutter.KEY_Page_Up, extraClassName: "small-text" },
+        { label: "⏎", width: 1.5, keyval: Clutter.KEY_Return, extraClassName: "enter-key" },
+        { label: "Ins", width: 1, keyval: Clutter.KEY_Insert },
+        { label: "Del", width: 1, keyval: Clutter.KEY_Delete },
       ],
       [
-        { label: "=/<F", width: 2, level: 3, right: true, extraClassName: "medium-text" },
-        { label: "↑", width: 1, keyval: Clutter.KEY_Up },
-        { label: "End", width: 1, keyval: Clutter.KEY_End, extraClassName: "small-text" },
-        { label: "PgDown", width: 1, keyval: Clutter.KEY_Page_Down, extraClassName: "small-text" },
+        { label: "=/<F", width: 2, level: 3, right: true },
+        { label: "Pause/\nBreak", width: 1, keyval: Clutter.KEY_Pause },
+        { label: "PgUp", width: 1, keyval: Clutter.KEY_Page_Up },
+        { label: "🌐\n" + currSourceName, width: 1, action: "languageMenu", extraClassName: "layout-key" },
       ],
       [
-        { label: "←", width: 1, keyval: Clutter.KEY_Left },
-        { label: "↓", width: 1, keyval: Clutter.KEY_Down },
-        { label: "→", width: 1, keyval: Clutter.KEY_Right },
-        { label: "🌐", width: 1, action: "languageMenu", extraClassName: "layout-key medium-text" },
+        { label: "❖", width: 1, keyval: Clutter.KEY_Super_L, extraClassName: "super-key" },
+        { label: "Home", width: 1, keyval: Clutter.KEY_Home },
+        { label: "PgDown", width: 1, keyval: Clutter.KEY_Page_Down },
+        { label: "End", width: 1, keyval: Clutter.KEY_End },
       ],
     ],
     [
       [
-        { label: "F1", width: 1, keyval: Clutter.KEY_F1, extraClassName: "small-text" },
-        { label: "F2", width: 1, keyval: Clutter.KEY_F2, extraClassName: "small-text" },
-        { label: "F3", width: 1, keyval: Clutter.KEY_F3, extraClassName: "small-text" },
+        { label: "F1", width: 1, keyval: Clutter.KEY_F1 },
+        { label: "F2", width: 1, keyval: Clutter.KEY_F2 },
+        { label: "F3", width: 1, keyval: Clutter.KEY_F3 },
       ],
       [
         { label: "", width: 0.5, extraClassName: "spacer" },
-        { label: "F4", width: 1, keyval: Clutter.KEY_F4, extraClassName: "small-text" },
-        { label: "F5", width: 1, keyval: Clutter.KEY_F5, extraClassName: "small-text" },
-        { label: "F6", width: 1, keyval: Clutter.KEY_F6, extraClassName: "small-text" },
+        { label: "F4", width: 1, keyval: Clutter.KEY_F4 },
+        { label: "F5", width: 1, keyval: Clutter.KEY_F5 },
+        { label: "F6", width: 1, keyval: Clutter.KEY_F6 },
       ],
       [
-        { label: "=/<F", width: 2, level: 2, right: true, extraClassName: "highlighted medium-text" },
-        { label: "F7", width: 1, keyval: Clutter.KEY_F7, extraClassName: "small-text" },
-        { label: "F8", width: 1, keyval: Clutter.KEY_F8, extraClassName: "small-text" },
-        { label: "F9", width: 1, keyval: Clutter.KEY_F9, extraClassName: "small-text" },
+        { label: "=/<F", width: 2, level: 2, right: true, extraClassName: "highlighted" },
+        { label: "F7", width: 1, keyval: Clutter.KEY_F7 },
+        { label: "F8", width: 1, keyval: Clutter.KEY_F8 },
+        { label: "F9", width: 1, keyval: Clutter.KEY_F9 },
       ],
       [
-        { label: "⌨\nꜜ", width: 1, action: "hide", extraClassName: "hide-key medium-text" },
-        { label: "F10", width: 1, keyval: Clutter.KEY_F10, extraClassName: "small-text" },
-        { label: "F11", width: 1, keyval: Clutter.KEY_F11, extraClassName: "small-text" },
-        { label: "F12", width: 1, keyval: Clutter.KEY_F12, extraClassName: "small-text" },
+        { label: "❖", width: 1, keyval: Clutter.KEY_Super_L, extraClassName: "super-key" },
+        { label: "F10", width: 1, keyval: Clutter.KEY_F10 },
+        { label: "F11", width: 1, keyval: Clutter.KEY_F11 },
+        { label: "F12", width: 1, keyval: Clutter.KEY_F12 },
       ],
     ],
   ];
+
+  if (level === 0 || level === 1) {
+    const numKeys =
+      row === 0
+        ? (['ar', 'uk', 'ru'].includes(currSourceName) ? 11 : 10)
+        : row === 1
+          ? (['ar', 'uk', 'ru'].includes(currSourceName) ? 11 : (['es', 'fr'].includes(currSourceName) ? 10 : 9))
+          : row === 2
+            ? (['ar'].includes(currSourceName) ? 10 : (['uk', 'ru'].includes(currSourceName) ? 9 : 7))
+            : 7;
+
+    if (row === 0 && numKeys === 10) {
+      defaultKeysPostMod[level][row] = [
+        defaultKeysPostMod[level][row][0],
+        {label: "Ins", width: 1, keyval: Clutter.KEY_Insert},
+        defaultKeysPostMod[level][row][1],
+      ];
+    } else if (row === 1 && numKeys === 10) {
+      defaultKeysPostMod[level][row] = [
+        defaultKeysPostMod[level][row][0],
+        {label: "Del", width: 1, keyval: Clutter.KEY_Delete},
+      ];
+    } else if (row === 1 && numKeys === 9) {
+      defaultKeysPostMod[level][row] = [
+        (level === 0
+            ? {label: "'", width: 1, keyval: Clutter.KEY_apostrophe}
+            : {label: "\"", width: 1, keyval: Clutter.KEY_quotedbl}
+        ),
+        defaultKeysPostMod[level][row][0],
+        {label: "Del", width: 1, keyval: Clutter.KEY_Delete},
+      ];
+    } else if (row === 2 && numKeys === 9) {
+      defaultKeysPostMod[level][row] = [
+        (level === 0
+            ? {label: "/", width: 1, keyval: Clutter.KEY_slash}
+            : {label: "?", width: 1, keyval: Clutter.KEY_question}
+        ),
+        ...defaultKeysPostMod[level][row],
+      ];
+    } else if (row === 2 && numKeys === 7) {
+      defaultKeysPostMod[level][row] = [
+        (level === 0
+            ? {label: "/", width: 1, keyval: Clutter.KEY_slash}
+            : {label: "?", width: 1, keyval: Clutter.KEY_question}
+        ),
+        (level === 0
+          ? { label: "⇧ Shift", width: 2, level: 1, right: true, extraClassName: "shift-key-lowercase" }
+          : { label: "⇧ Shift", width: 2, level: 0, right: true, extraClassName: "shift-key-uppercase" }
+        ),
+        ...defaultKeysPostMod[level][row],
+      ];
+    }
+  }
 
   /* The first 2 rows in defaultKeysPre/Post belong together with
    * the first 2 rows on each keymap. On keymaps that have more than
@@ -498,11 +544,6 @@ function override_loadDefaultKeys(keys, layout, numLevels, numKeys) {
       } else {
         extraButton.hide();
       }
-      extraButton.setWidth(1.5);
-    } else if (key.right && numKeys > 8) {
-      extraButton.setWidth(2);
-    } else if (keyval == Clutter.KEY_Return && numKeys > 9) {
-      extraButton.setWidth(1.5);
     }
 
     layout.appendKey(extraButton, extraButton.keyButton.keyWidth);
